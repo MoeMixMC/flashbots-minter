@@ -4,6 +4,7 @@ import { BigNumber, providers, Wallet } from "ethers";
 const provider = new providers.InfuraProvider(5)
 
 async function main(){
+    console.log("starting")
     const flashbotsProvider = await FlashbotsBundleProvider.create(provider, new Wallet.createRandom(), "https://relay-goerli.flashbots.net")
     provider.on('block', (blockNumber) => {
         console.log(blockNumber)
